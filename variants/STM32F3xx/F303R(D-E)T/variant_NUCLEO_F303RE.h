@@ -127,9 +127,9 @@
 
 // On-board LED pin number
 #ifndef LED_BUILTIN
-  #define LED_BUILTIN           LED_GREEN
+  #define LED_BUILTIN           PA5
 #endif
-#define LED_GREEN               PA5
+#define LED_GREEN               LED_BUILTIN
 
 // On-board user button
 #ifndef USER_BTN
