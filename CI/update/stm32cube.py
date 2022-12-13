@@ -711,7 +711,7 @@ def applyBlePatch():
 def updateBleReadme(filepath, version):
     print(" Updating README.md in ble library")
     for line in fileinput.input(filepath, inplace=True):
-        print(re.sub(r"v\d+.\d+.\d+", version, line), end="")
+        print(re.sub(r"v\d+.\d+.\d+", f"v{version}", line), end="")
 
 
 def updateBleLibrary():
@@ -723,7 +723,7 @@ def updateBleLibrary():
     ble_path = repo_local_path / repo_ble_name / "src" / "utility" / "STM32Cube_FW"
     cube_version = cube_versions["WB"]
 
-    ble_commit_msg = f"Update STM32Cube_FW from Cube version {cube_version}"
+    ble_commit_msg = f"chore: update STM32Cube_FW from Cube version {cube_version}"
 
     for file in ble_file_list:
         file_path = Path(cube_path / file)
